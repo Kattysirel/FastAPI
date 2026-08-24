@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#fff8f5] px-6 py-12">
+    <div className="relative flex w-full justify-center overflow-hidden bg-[#fff8f5] px-6 py-20">
       <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#f55c7a] opacity-20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-[#f6bc66] opacity-25 blur-3xl" />
       <div className="pointer-events-none absolute right-1/3 top-10 h-56 w-56 rounded-full bg-[#f68c70] opacity-20 blur-3xl" />
