@@ -1,16 +1,53 @@
 # FastAPI
 
-Ruta brindada: http://127.0.0.1:8000 
-Esta actividad me ayudó a entender cómo funciona una API básica de login y la importancia de validar usuarios de forma muy facil, usando FastAPI y sqlmodel.
+API básica de login hecha con **FastAPI** y **SQLModel**: valida un usuario y contraseña contra
+una lista fija en memoria (sin base de datos real) y devuelve si el acceso fue exitoso o denegado.
 
-Entrada de datos:
-<img width="652" height="327" alt="image" src="https://github.com/user-attachments/assets/2a8b52d5-6de8-404f-9405-ca400605f486" />
-Resultado:
-<img width="1562" height="576" alt="image" src="https://github.com/user-attachments/assets/f35f76f9-cc7a-403b-8a19-8d602ab3c277" />
+- **Endpoint**: `POST /login`
+- **Body**: `{ "user": "Katty", "contraseña": "123" }`
+- **Respuesta**: `{ "mensaje": "Login Exitoso" }` o `{ "mensaje": "Acceso denegado" }`
 
-Entrada de datos:
-<img width="1300" height="364" alt="image" src="https://github.com/user-attachments/assets/a9271d05-17a9-4d31-a42d-daf938ad3458" />
-Resultado:
-<img width="1549" height="347" alt="image" src="https://github.com/user-attachments/assets/500c1cc8-d548-4ac3-a524-c6ac095816f1" />
+Usuarios de prueba definidos en el propio código: `Katty/123`, `Kata/456`, `Cris/789`.
 
-En ambos caos se pudo visualizar la validacion de usauario  mediante el uso de for, if para la repectiva comparación
+Esta actividad ayudó a entender cómo funciona una API básica de login y la validación de
+usuarios con FastAPI y SQLModel.
+
+## Cómo correr el backend
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate     # en Windows
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+Queda disponible en `http://127.0.0.1:8000`.
+
+## Interfaz web
+
+El repo incluye una **demo interactiva** ([`app/`](./app)) hecha con React + TypeScript: un
+formulario de login que llama directamente al endpoint `/login` del backend y muestra el
+resultado (éxito o acceso denegado) con una paleta de colores cálida y elementos suaves
+(gradientes, bordes redondeados, sombras difuminadas).
+
+### Cómo correrla
+
+Con el backend corriendo en `http://127.0.0.1:8000` (ver arriba):
+
+```bash
+cd app
+npm install
+npm run dev
+```
+
+Abrí la URL que muestra la terminal (por defecto `http://localhost:5173`).
+
+## Capturas
+
+**Login exitoso** — al ingresar un usuario y contraseña válidos (por ejemplo `Katty` / `123`).
+
+![Login exitoso](./docs/login-exitoso.png)
+
+**Acceso denegado** — con credenciales incorrectas.
+
+![Acceso denegado](./docs/acceso-denegado.png)
