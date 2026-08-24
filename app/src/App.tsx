@@ -57,7 +57,7 @@ function App() {
               FastAPI.login
             </h1>
             <p className="mt-2 text-sm text-slate-500">
-              Ingresá tus credenciales para probar el endpoint <code className="font-mono text-slate-600">/login</code>.
+              Ingresa tus credenciales para probar el endpoint <code className="font-mono text-slate-600">/login</code>.
             </p>
           </header>
 

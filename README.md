@@ -40,7 +40,7 @@ npm install
 npm run dev
 ```
 
-Abrí la URL que muestra la terminal (por defecto `http://localhost:5173`).
+Abre la URL que muestra la terminal (por defecto `http://localhost:5173`).
 
 ## Capturas
 
